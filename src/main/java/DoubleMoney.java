@@ -1,3 +1,5 @@
+import java.io.IOException;
+import java.nio.file.Paths;
 import java.util.Scanner;
 
 // TODO
@@ -25,9 +27,14 @@ public class DoubleMoney {
         String name = in.nextLine();
 
         System.out.print("How many dollars do you have? ");
-        double m = in.nextDouble();
+        double m = 0;
+        try {
+            m = in.nextDouble();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
-        double newMoney = m * m;
+        double newMoney = 2 * m;
         System.out.printf("Now you have %f dollars, %s!", newMoney, name);
     }
 }
